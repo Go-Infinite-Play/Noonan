@@ -3,43 +3,45 @@
 import { PricingButton } from "@/components/payments/pricing-button"
 import { Button } from "@/components/ui/button"
 import { motion } from "framer-motion"
-import { Check, CreditCard, Zap } from "lucide-react"
+import { Check, Target, Crown } from "lucide-react"
 import { SectionWrapper } from "./section-wrapper"
+import Link from "next/link"
 
 const pricing = [
   {
-    name: "Pro Monthly",
-    price: "$19",
-    period: "/month",
-    description: "Perfect for growing businesses",
+    name: "Free",
+    price: "$0",
+    period: "/forever",
+    description: "Perfect for trying out Noonan",
     features: [
-      "Unlimited projects",
-      "Advanced analytics",
-      "Priority support",
-      "Custom integrations",
-      "API access",
-      "Export data"
+      "Log up to 3 golf rounds",
+      "Chat with Noonan AI",
+      "Basic round tracking",
+      "Score history",
+      "Course notes"
     ],
-    paymentLink: process.env.NEXT_PUBLIC_STRIPE_PAYMENT_LINK_MONTHLY,
-    icon: CreditCard,
-    highlight: false
+    paymentLink: null,
+    icon: Target,
+    highlight: false,
+    isSignup: true
   },
   {
-    name: "Pro Yearly",
-    price: "$190",
-    period: "/year",
-    description: "Best value - save $38 per year",
+    name: "Pro",
+    price: "$9",
+    period: "/month",
+    description: "For serious golfers who want unlimited tracking",
     features: [
-      "Everything in monthly",
-      "2 months free",
-      "Early access to features",
-      "Custom onboarding",
-      "Dedicated account manager",
-      "99.9% uptime SLA"
+      "Unlimited golf rounds",
+      "Advanced statistics",
+      "Round comparison",
+      "Detailed progress tracking",
+      "Priority Noonan responses",
+      "Export your data"
     ],
-    paymentLink: process.env.NEXT_PUBLIC_STRIPE_PAYMENT_LINK_YEARLY,
-    icon: Zap,
-    highlight: true
+    paymentLink: process.env.NEXT_PUBLIC_STRIPE_PAYMENT_LINK_MONTHLY,
+    icon: Crown,
+    highlight: true,
+    isSignup: false
   }
 ]
 
@@ -55,7 +57,7 @@ export function PricingSection() {
             viewport={{ once: true }}
             transition={{ duration: 0.5 }}
           >
-            Simple, transparent pricing
+            Start free, upgrade when ready
           </motion.h2>
           <motion.p
             className="text-muted-foreground mt-4 text-lg leading-8"
@@ -64,7 +66,7 @@ export function PricingSection() {
             viewport={{ once: true }}
             transition={{ duration: 0.5, delay: 0.1 }}
           >
-            Choose the plan that fits your needs. Cancel anytime.
+            Try Noonan for free with 3 rounds, then upgrade for unlimited golf tracking.
           </motion.p>
         </div>
 
@@ -169,7 +171,17 @@ export function PricingSection() {
                 ))}
               </ul>
 
-              {tier.paymentLink ? (
+              {tier.isSignup ? (
+                <Button
+                  asChild
+                  className="mt-8 w-full"
+                  variant="outline"
+                >
+                  <Link href="/signup">
+                    Start Free
+                  </Link>
+                </Button>
+              ) : tier.paymentLink ? (
                 <PricingButton
                   paymentLink={tier.paymentLink}
                   className={`mt-8 w-full ${
@@ -179,7 +191,7 @@ export function PricingSection() {
                   }`}
                   variant={tier.highlight ? "default" : "outline"}
                 >
-                  Get started
+                  Upgrade to Pro
                 </PricingButton>
               ) : (
                 <Button
@@ -206,7 +218,7 @@ export function PricingSection() {
           transition={{ duration: 0.5, delay: 0.3 }}
         >
           <p className="text-muted-foreground text-sm">
-            All plans include a 30-day money-back guarantee. No questions asked.
+            Start free and upgrade anytime. Cancel your Pro subscription anytime, no questions asked.
           </p>
         </motion.div>
       </div>

@@ -2,6 +2,14 @@
 
 This file provides guidance to Claude Code (claude.ai/code) when working with code in this repository.
 
+## Standard Workflow
+
+1. First, think through the problem, read the codebase for relevant files and write a plan in tasks/todo.md.
+2. The plan should have a list of to-do items that you can check off as you complete them.
+3. Before you begin working, check in with me, and I will verify the plan.
+4. Then begin working on the to-do items, marking them as complete as you go.
+5. Finally, add a review section to the todo.md file with a summary of the changes you made and any other relevant information.
+
 ## Commands
 
 ### Development
@@ -18,10 +26,10 @@ This file provides guidance to Claude Code (claude.ai/code) when working with co
 
 ### Database
 - `npx drizzle-kit push` - Push schema changes to database
-- `npx drizzle-kit generate` - Generate migration files
-- `npx drizzle-kit migrate` - Run migrations
-- `npx bun db/seed` - Seed database
-- `npx supabase start` - Start local Supabase instance
+- `npm run db:generate` - Generate migration files
+- `npm run db:migrate` - Run migrations
+- `npm run db:seed` - Seed database
+- `npm run db:local` - Start local Supabase instance
 
 ### Testing
 - `npm run test` - Run all tests (unit + e2e)
@@ -57,7 +65,16 @@ This is a Next.js 15 SaaS template using the App Router with clear separation be
 4. Server actions handle all data mutations with proper auth checks
 
 ### Environment Variables Required
+- `DATABASE_URL` - PostgreSQL database connection string
 - `NEXT_PUBLIC_CLERK_PUBLISHABLE_KEY` - Clerk public key
 - `CLERK_SECRET_KEY` - Clerk secret key
+- `NEXT_PUBLIC_CLERK_SIGN_IN_URL=/login` - Clerk sign in URL
+- `NEXT_PUBLIC_CLERK_SIGN_UP_URL=/signup` - Clerk sign up URL
 - `STRIPE_SECRET_KEY` - Stripe secret key
-- Database connection handled by Supabase CLI
+- `STRIPE_WEBHOOK_SECRET` - Stripe webhook endpoint secret
+- `NEXT_PUBLIC_STRIPE_PAYMENT_LINK_YEARLY` - Stripe yearly payment link
+- `NEXT_PUBLIC_STRIPE_PAYMENT_LINK_MONTHLY` - Stripe monthly payment link
+
+## Additional Commands
+- `npm run format:check` - Check code formatting with Prettier
+- `npm run analyze` - Analyze bundle size with webpack-bundle-analyzer

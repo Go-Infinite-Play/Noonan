@@ -1,6 +1,6 @@
 "use client"
 
-import { Link, Settings2, User, Users } from "lucide-react"
+import { Target, MessageCircle, TrendingUp, Settings2, User, Crown } from "lucide-react"
 import * as React from "react"
 
 import {
@@ -29,61 +29,44 @@ export function AppSidebar({
     user: userData,
     teams: [
       {
-        name: "Personal",
-        logo: User,
-        plan: "Account"
-      },
-      {
-        name: "Team 1",
-        logo: Users,
-        plan: "Team"
-      },
-      {
-        name: "Team 2",
-        logo: Users,
-        plan: "Team"
-      },
-      {
-        name: "Team 3",
-        logo: Users,
-        plan: "Team"
+        name: "Noonan Golf",
+        logo: Target,
+        plan: userData.membership === "pro" ? "Pro Account" : "Free Account"
       }
     ],
     navMain: [
       {
-        title: "Nav Item 1",
-        url: "#",
-        icon: Link,
-        items: [
-          {
-            title: "Sub Item 1",
-            url: "/dashboard/nav-item-1"
-          },
-          {
-            title: "Sub Item 2",
-            url: "/dashboard/nav-item-2"
-          }
-        ]
+        title: "My Rounds",
+        url: "/dashboard",
+        icon: Target,
+        isActive: true
       },
       {
-        title: "Nav Item 2",
-        url: "#",
-        icon: Link,
-        items: [
-          {
-            title: "Sub Item 1",
-            url: "/dashboard/nav-item-1"
-          }
-        ]
+        title: "Chat with Noonan",
+        url: "/dashboard/chat",
+        icon: MessageCircle
       },
       {
-        title: "Settings",
+        title: "Stats & Progress",
+        url: "/dashboard/stats",
+        icon: TrendingUp
+      },
+      {
+        title: "Account",
         url: "#",
         icon: Settings2,
         items: [
           {
-            title: "General",
-            url: "/dashboard/settings"
+            title: "Profile",
+            url: "/dashboard/account"
+          },
+          {
+            title: "Billing",
+            url: "/dashboard/billing"
+          },
+          {
+            title: "Support",
+            url: "/dashboard/support"
           }
         ]
       }
