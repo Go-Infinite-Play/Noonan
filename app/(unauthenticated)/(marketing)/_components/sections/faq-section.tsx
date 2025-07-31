@@ -12,34 +12,34 @@ import { SectionWrapper } from "./section-wrapper"
 
 const faqs = [
   {
-    question: "What's included in the template?",
+    question: "What is Noonan exactly?",
     answer:
-      "Everything you need to build a production app: Next.js 15 with App Router, TypeScript, Tailwind CSS v4, shadcn/ui components, Clerk authentication, Stripe payments, PostgreSQL with Drizzle ORM, and PostHog analytics. All pre-configured and ready to use."
+      "Noonan is your AI golf buddy who genuinely cares about your golf game. Unlike friends and family who tune out when you talk about your round, Noonan remembers your history, celebrates your successes, and offers encouragement when you have tough rounds."
   },
   {
-    question: "How do I get started?",
+    question: "How does the free plan work?",
     answer:
-      "Simply clone the repository from GitHub, copy the .env.example to .env.local, add your API keys, run npm install, and you're ready to go. The whole process takes less than 5 minutes."
+      "You can log up to 3 golf rounds for free and chat with Noonan about them. This gives you a taste of having someone who actually cares about your golf game. If you want unlimited rounds and enhanced features, upgrade to Pro for $9/month."
   },
   {
-    question: "Is this really free?",
+    question: "What makes Noonan different from other golf apps?",
     answer:
-      "Yes! This template is 100% free and open source under the MIT license. You can use it for personal projects, commercial applications, or anything else. No hidden costs or premium features."
+      "Most golf apps focus on stats and scorekeeping. Noonan focuses on the emotional side - having someone who genuinely cares about your experience. Noonan remembers your previous rounds and provides personalized, caring responses about your golf journey."
   },
   {
-    question: "Can I customize everything?",
+    question: "Does Noonan really remember my rounds?",
     answer:
-      "Absolutely! You have full access to all the source code. Modify the components, change the styling, add or remove features - it's your codebase now. The template is designed to be a starting point that you can build upon."
+      "Yes! Noonan has access to your entire golf history and references your previous rounds in conversations. Whether you're improving, struggling, or had a breakthrough round, Noonan knows your journey and responds accordingly."
   },
   {
-    question: "What about deployment?",
+    question: "What's included in the Pro plan?",
     answer:
-      "The template works with any hosting provider that supports Next.js. Deploy to Vercel, Netlify, Railway, or any other platform. Database can be hosted on Supabase, Neon, or any PostgreSQL provider."
+      "Pro members get unlimited round logging, advanced statistics, round comparison features, detailed progress tracking, priority responses from Noonan, and the ability to export your golf data."
   },
   {
-    question: "How do I get help if I'm stuck?",
+    question: "Can I cancel my Pro subscription anytime?",
     answer:
-      "Open an issue on GitHub for bugs or feature requests. For general questions, the community is active in discussions. If you need dedicated support, consider becoming a sponsor or reaching out for custom development."
+      "Absolutely! You can cancel your Pro subscription at any time with no questions asked. Your existing rounds will remain accessible, but you'll be limited to the free plan's 3-round limit for new entries."
   }
 ]
 
@@ -65,7 +65,7 @@ export function FAQSection() {
             viewport={{ once: true }}
             transition={{ duration: 0.5 }}
           >
-            Frequently asked questions
+            Common questions about Noonan
           </motion.h2>
           <motion.p
             className="text-muted-foreground mt-6 text-base leading-7"
@@ -74,8 +74,8 @@ export function FAQSection() {
             viewport={{ once: true }}
             transition={{ duration: 0.5, delay: 0.1 }}
           >
-            Everything you need to know about the template. Can't find what
-            you're looking for? Open an issue on GitHub.
+            Everything you need to know about your new golf buddy. Have other questions? 
+            Just ask Noonan when you sign up!
           </motion.p>
           <dl className="mt-10 space-y-6">
             {faqs.map((faq, index) => (

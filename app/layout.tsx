@@ -19,8 +19,8 @@ const geistMono = Geist_Mono({
 })
 
 export const metadata: Metadata = {
-  title: "Mckay's App Template",
-  description: "The easiest way to start your next project."
+  title: "Noonan - Your Golf Buddy Who Actually Cares",
+  description: "Finally, someone who genuinely cares about your golf rounds. Track your game and chat with Noonan, your AI golf buddy."
 }
 
 export default function RootLayout({

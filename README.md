@@ -1,53 +1,94 @@
-# Mckay's App Template
+# Noonan - Your Golf Buddy Who Actually Cares
 
-This is a full-stack app template that I use to build my own apps.
+Finally, someone who genuinely cares about your golf rounds. Track your game and chat with Noonan, your AI golf buddy who remembers your history and responds meaningfully to your golf experiences.
 
-To learn how to use this template with the best AI tools & workflows, check out my workshops on [Takeoff](https://JoinTakeoff.com/)!
+## What is Noonan?
 
-## Tech Stack
+Noonan is the golf buddy you've always wanted - someone who:
+- **Actually listens** when you talk about your round
+- **Remembers** your previous games and progress  
+- **Celebrates** your victories and offers encouragement during tough rounds
+- **Provides meaningful feedback** about your golf journey
 
-- Frontend: [Next.js](https://nextjs.org/docs), [Tailwind](https://tailwindcss.com/docs/guides/nextjs), [Shadcn](https://ui.shadcn.com/docs/installation), [Framer Motion](https://www.framer.com/motion/introduction/)
-- Backend: [PostgreSQL](https://www.postgresql.org/about/), [Supabase](https://supabase.com/), [Drizzle](https://orm.drizzle.team/docs/get-started-postgresql), [Server Actions](https://nextjs.org/docs/app/building-your-application/data-fetching/server-actions-and-mutations)
-- Auth: [Clerk](https://clerk.com/)
-- Payments: [Stripe](https://stripe.com/)
+Because let's face it - nobody else really wants to hear about that eagle you made on the 7th hole.
 
-## Prerequisites
+## Features
 
-You will need accounts for the following services.
+- 🏌️ **Round Tracking**: Log your golf rounds with course, score, and notes
+- 💬 **Chat with Noonan**: Your AI golf buddy who genuinely cares about your game
+- 📊 **Progress Tracking**: See your improvement over time with detailed statistics
+- 🆓 **Free to Start**: Log 3 rounds free, upgrade to Pro for unlimited rounds
+- 🧠 **Memory**: Noonan remembers your golf history and references it in conversations
+- 📱 **Modern Interface**: Clean, golf-focused design that's easy to use
 
-They all have free plans that you can use to get started.
+## Getting Started
 
-- Create a [GitHub](https://github.com/) account
-- Create a [Supabase](https://supabase.com/) account
-- Create a [Clerk](https://clerk.com/) account
-- Create a [Stripe](https://stripe.com/) account
-- Create a [Vercel](https://vercel.com/) account
-
-You will likely not need paid plans unless you are building a business.
+1. Clone this repository
+2. Copy `.env.example` to `.env.local` and add your environment variables
+3. Run `npm install` to install dependencies
+4. Run `npm run db:local` to start the local database
+5. Run `npm run dev` to start the development server
+6. Visit `http://localhost:3000` and start logging your rounds!
 
 ## Environment Variables
 
 ```bash
-# DB
+# Database
 DATABASE_URL=
-# Access Supabase Studio here: http://127.0.0.1:54323/project/default
 
-# Clerk
+# Authentication (Clerk)
 NEXT_PUBLIC_CLERK_PUBLISHABLE_KEY=
 CLERK_SECRET_KEY=
-NEXT_PUBLIC_CLERK_SIGN_IN_URL=/login # do not change
-NEXT_PUBLIC_CLERK_SIGN_UP_URL=/signup # do not change
+NEXT_PUBLIC_CLERK_SIGN_IN_URL=/login
+NEXT_PUBLIC_CLERK_SIGN_UP_URL=/signup
 
-# Stripe
+# AI (Claude)
+ANTHROPIC_API_KEY=
+
+# Payments (Stripe)
 STRIPE_SECRET_KEY=
 STRIPE_WEBHOOK_SECRET=
 NEXT_PUBLIC_STRIPE_PAYMENT_LINK_YEARLY=
 NEXT_PUBLIC_STRIPE_PAYMENT_LINK_MONTHLY=
 ```
 
-## Setup
+## Tech Stack
 
-1. Clone the repository
-2. Copy `.env.example` to `.env.local` and fill in the environment variables from above
-3. Run `npm install` to install dependencies
-4. Run `npm run dev` to run the app locally
+- **Frontend**: Next.js 15, TypeScript, Tailwind CSS, Shadcn/ui, Framer Motion
+- **Backend**: PostgreSQL, Drizzle ORM, Server Actions
+- **Authentication**: Clerk
+- **AI**: Claude (Anthropic)
+- **Payments**: Stripe
+- **Deployment**: Vercel
+
+## Pricing
+
+- **Free Plan**: 3 rounds + chat with Noonan
+- **Pro Plan ($9/month)**: Unlimited rounds + advanced stats + priority responses
+
+## Commands
+
+```bash
+# Development
+npm run dev          # Start development server
+npm run build        # Build for production
+npm run start        # Start production server
+
+# Database
+npm run db:local     # Start local Supabase
+npm run db:generate  # Generate migrations
+npm run db:migrate   # Run migrations
+
+# Code Quality
+npm run lint         # Run ESLint
+npm run types        # Check TypeScript
+npm run format:write # Format with Prettier
+```
+
+## Support
+
+Questions about your golf game? Ask Noonan when you sign up! Technical questions? Open an issue on GitHub.
+
+---
+
+*Finally, someone who cares what you shot.*

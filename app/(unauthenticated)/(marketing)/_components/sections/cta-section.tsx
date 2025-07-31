@@ -2,7 +2,7 @@
 
 import { Button } from "@/components/ui/button"
 import { motion } from "framer-motion"
-import { ArrowRight, Github } from "lucide-react"
+import { ArrowRight, Target } from "lucide-react"
 import Link from "next/link"
 import { SectionWrapper } from "./section-wrapper"
 
@@ -17,7 +17,7 @@ export function CTASection() {
           viewport={{ once: true }}
           transition={{ duration: 0.5 }}
         >
-          Ready to build something amazing?
+          Ready to share your next round?
         </motion.h2>
         <motion.p
           className="mx-auto mt-6 max-w-xl text-lg leading-8"
@@ -26,8 +26,8 @@ export function CTASection() {
           viewport={{ once: true }}
           transition={{ duration: 0.5, delay: 0.1 }}
         >
-          Stop wasting time on boilerplate. Clone this template and start
-          shipping your product today.
+          Join golfers who finally have someone who genuinely cares about their game. 
+          Start tracking your rounds and chatting with Noonan today.
         </motion.p>
         <motion.div
           className="mt-10 flex items-center justify-center gap-x-6"
@@ -41,12 +41,9 @@ export function CTASection() {
             className="bg-brand-primary text-brand-primary-foreground hover:bg-brand-primary-hover"
             asChild
           >
-            <Link
-              href="https://github.com/mckaywrigley/mckays-app-template"
-              target="_blank"
-            >
-              <Github className="mr-2 h-4 w-4" />
-              Clone Template
+            <Link href="/signup">
+              <Target className="mr-2 h-4 w-4" />
+              Start Free
               <ArrowRight className="ml-2 h-4 w-4" />
             </Link>
           </Button>
@@ -57,7 +54,7 @@ export function CTASection() {
             asChild
           >
             <Link href="#features">
-              View features <span aria-hidden="true">→</span>
+              Learn more <span aria-hidden="true">→</span>
             </Link>
           </Button>
         </motion.div>
@@ -71,9 +68,9 @@ export function CTASection() {
           transition={{ duration: 0.5, delay: 0.3 }}
         >
           {[
-            { label: "Time to First Deploy", value: "< 5 min" },
-            { label: "Production Ready", value: "100%" },
-            { label: "License", value: "MIT" }
+            { label: "Free Rounds to Start", value: "3" },
+            { label: "AI That Cares", value: "100%" },
+            { label: "Setup Time", value: "< 2 min" }
           ].map((stat, index) => (
             <motion.div
               key={stat.label}

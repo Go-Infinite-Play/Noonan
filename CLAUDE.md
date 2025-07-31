@@ -41,7 +41,7 @@ This file provides guidance to Claude Code (claude.ai/code) when working with co
 
 ## Architecture
 
-This is a Next.js 15 SaaS template using the App Router with clear separation between authenticated and unauthenticated routes.
+This is Noonan, a Next.js 15 golf tracking app using the App Router. It connects golfers with an AI buddy who genuinely cares about their game.
 
 ### Route Structure
 - `/app/(unauthenticated)` - Public routes
@@ -52,17 +52,20 @@ This is a Next.js 15 SaaS template using the App Router with clear separation be
 - `/app/api` - API routes including Stripe webhook handler
 
 ### Key Patterns
-- **Server Actions** in `/actions` for data mutations (customers, Stripe operations)
-- **Database Schema** in `/db/schema` using Drizzle ORM with PostgreSQL
+- **Server Actions** in `/actions` for golf round CRUD operations and customer management
+- **Database Schema** in `/db/schema` using Drizzle ORM with PostgreSQL (golf_rounds, golf_courses, conversations)
 - **UI Components** in `/components/ui` from Shadcn UI library
+- **Golf Components** in `/components/golf` for round tracking and Noonan chat
 - **Authentication** handled by Clerk middleware with protected route groups
-- **Payments** integrated via Stripe with webhook handling
+- **AI Integration** via Claude API for Noonan conversations
+- **Payments** integrated via Stripe for Pro subscriptions
 
 ### Data Flow
 1. Authentication state managed by Clerk (`@clerk/nextjs`)
-2. Customer data stored in PostgreSQL via Drizzle ORM
-3. Stripe integration for subscription management
-4. Server actions handle all data mutations with proper auth checks
+2. Golf data stored in PostgreSQL via Drizzle ORM (rounds, courses, conversations)
+3. AI conversations powered by Claude (Anthropic) with golf context
+4. Freemium model with 3 free rounds, unlimited Pro rounds
+5. Server actions handle golf round management with membership limits
 
 ### Environment Variables Required
 - `DATABASE_URL` - PostgreSQL database connection string
@@ -70,6 +73,7 @@ This is a Next.js 15 SaaS template using the App Router with clear separation be
 - `CLERK_SECRET_KEY` - Clerk secret key
 - `NEXT_PUBLIC_CLERK_SIGN_IN_URL=/login` - Clerk sign in URL
 - `NEXT_PUBLIC_CLERK_SIGN_UP_URL=/signup` - Clerk sign up URL
+- `ANTHROPIC_API_KEY` - Claude API key for Noonan conversations
 - `STRIPE_SECRET_KEY` - Stripe secret key
 - `STRIPE_WEBHOOK_SECRET` - Stripe webhook endpoint secret
 - `NEXT_PUBLIC_STRIPE_PAYMENT_LINK_YEARLY` - Stripe yearly payment link

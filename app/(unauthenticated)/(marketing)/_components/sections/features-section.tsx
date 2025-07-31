@@ -2,51 +2,51 @@
 
 import { motion } from "framer-motion"
 import {
-  BarChart,
-  Code2,
-  CreditCard,
-  Database,
-  Palette,
-  Shield
+  Target,
+  MessageCircle,
+  TrendingUp,
+  Crown,
+  Heart,
+  Calendar
 } from "lucide-react"
 import { SectionWrapper } from "./section-wrapper"
 
 const features = [
   {
-    name: "Authentication Ready",
+    name: "Round Tracking",
     description:
-      "Clerk authentication pre-configured with protected routes, user management, and session handling.",
-    icon: Shield
+      "Log your golf rounds with course details, scores, and personal notes. Free users get 3 rounds, Pro users get unlimited.",
+    icon: Target
   },
   {
-    name: "Payments Integration",
+    name: "Chat with Noonan",
     description:
-      "Stripe integration with webhook support, subscription management, and checkout flows.",
-    icon: CreditCard
+      "Your AI golf buddy who genuinely cares about your game. Share your rounds and get meaningful feedback and encouragement.",
+    icon: MessageCircle
   },
   {
-    name: "Database Setup",
+    name: "Golf Progress",
     description:
-      "PostgreSQL with Drizzle ORM configured and ready. Includes migrations and type-safe queries.",
-    icon: Database
+      "Track your improvement over time with detailed statistics, trends, and insights into your golf game.",
+    icon: TrendingUp
   },
   {
-    name: "Modern UI Components",
+    name: "Premium Features",
     description:
-      "Beautiful, accessible components with shadcn/ui. Dark mode support and Tailwind CSS v4.",
-    icon: Palette
+      "Upgrade to Pro for unlimited rounds, advanced statistics, and priority responses from Noonan.",
+    icon: Crown
   },
   {
-    name: "TypeScript First",
+    name: "Actually Cares",
     description:
-      "Full TypeScript support with strict mode, path aliases, and type safety throughout.",
-    icon: Code2
+      "Unlike everyone else, Noonan remembers your previous rounds and genuinely wants to hear about your golf experiences.",
+    icon: Heart
   },
   {
-    name: "Analytics Built-in",
+    name: "Round History",
     description:
-      "PostHog analytics integration for tracking user behavior and product metrics.",
-    icon: BarChart
+      "View all your past rounds with detailed information, scores, and the ability to edit or add notes anytime.",
+    icon: Calendar
   }
 ]
 
@@ -65,7 +65,7 @@ export function FeaturesSection() {
             viewport={{ once: true }}
             transition={{ duration: 0.5 }}
           >
-            Everything Included
+            Why Golfers Love Noonan
           </motion.h2>
           <motion.p
             className="text-foreground mt-2 text-3xl font-bold tracking-tight sm:text-4xl"
@@ -74,7 +74,7 @@ export function FeaturesSection() {
             viewport={{ once: true }}
             transition={{ duration: 0.5, delay: 0.1 }}
           >
-            Start with a complete foundation
+            Your golf buddy who actually cares
           </motion.p>
           <motion.p
             className="text-muted-foreground mt-6 text-lg leading-8"
@@ -83,8 +83,8 @@ export function FeaturesSection() {
             viewport={{ once: true }}
             transition={{ duration: 0.5, delay: 0.2 }}
           >
-            No more setup headaches. Clone the repo and start building your
-            product immediately.
+            Finally, someone who genuinely wants to hear about your round, 
+            remembers your progress, and celebrates your victories.
           </motion.p>
         </div>
 
